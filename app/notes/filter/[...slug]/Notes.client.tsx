@@ -13,8 +13,10 @@ import Modal from '@/components/Modal/Modal';
 import NoteForm from '@/components/NoteForm/NoteForm';
 
 import { fetchNotes } from '@/lib/api';
+// import type { Tag } from '@/types/note';
+// type tagId = string | undefined;
 
-export default function NotesClient() {
+export default function NotesClient({ tag }: { tag: string | undefined }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -28,8 +30,8 @@ export default function NotesClient() {
   }, 300);
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['notes', searchQuery, page],
-    queryFn: () => fetchNotes(searchQuery, page),
+    queryKey: ['notes', searchQuery, tag, page],
+    queryFn: () => fetchNotes(searchQuery, tag, page),
     placeholderData: keepPreviousData,
     refetchOnMount: false,
   });

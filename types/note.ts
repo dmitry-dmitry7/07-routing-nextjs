@@ -1,4 +1,4 @@
-export type Tag = 'Todo' | 'Work' | 'Personal' | 'Meeting' | 'Shopping';
+export type Tag = 'Work' | 'Personal' | 'Meeting' | 'Shopping' | 'Todo';
 
 export interface Note {
   id: string;
