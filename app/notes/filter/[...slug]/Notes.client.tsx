@@ -13,8 +13,6 @@ import Modal from '@/components/Modal/Modal';
 import NoteForm from '@/components/NoteForm/NoteForm';
 
 import { fetchNotes } from '@/lib/api';
-// import type { Tag } from '@/types/note';
-// type tagId = string | undefined;
 
 export default function NotesClient({ tag }: { tag: string | undefined }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
